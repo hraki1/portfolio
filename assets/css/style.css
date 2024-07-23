@@ -719,6 +719,41 @@ section {
 .portfolio-details .portfolio-description p {
   padding: 0;
 }
+/*--------------------------------------------------------------
+# Skills
+--------------------------------------------------------------*/
+.skill-box {
+  margin-bottom: 20px;
+}
+
+.skill-box .image {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.skill-box .image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+
+@media (max-width: 576px) {
+  .skill-box-container {
+    flex-direction: row;
+  }
+
+  .skill-box {
+    flex: 1 1 48%; /* Two boxes per row with some margin */
+  }
+
+  .skill-box .image img {
+    width: 60px; /* Adjust the image size for mobile screens */
+  }
+
+  .text-center {
+    font-size: 14px; /* Adjust the text size for mobile screens */
+  }
+}
 
 /*--------------------------------------------------------------
 # Services
