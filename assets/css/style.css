@@ -240,7 +240,7 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: url("../img/hero-bg1.jpg") top center;
   background-size: cover;
   overflow: hidden;
@@ -248,7 +248,7 @@ h6 {
 @media (max-width: 768px) {
   #hero {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: url("../img/hero-bg.jpg") top center;
     background-size: cover;
     overflow: hidden;
@@ -391,6 +391,7 @@ section {
   font-size: 16px;
   margin-right: 5px;
   color: #149ddd;
+
   line-height: 0;
 }
 
