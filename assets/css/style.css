@@ -239,6 +239,7 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
+  transition: 0.3s;
   width: 100%;
   min-height: 100vh;
   background: url("../img/hero-bg1.jpg") top center;
@@ -247,6 +248,7 @@ h6 {
 }
 @media (max-width: 768px) {
   #hero {
+    transition: 0.3s;
     width: 100%;
     min-height: 100vh;
     background: url("../img/hero-bg.jpg") top center;
