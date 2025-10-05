@@ -34,6 +34,59 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# Skills Section
+--------------------------------------------------------------*/
+.skill-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.skill-icon:hover {
+  transform: scale(1.1);
+}
+
+.skill-name {
+  font-size: 12px;
+  color: #333;
+  margin-top: 6px;
+}
+
+.skill-box {
+  text-align: center;
+  padding: 15px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.skill-box:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile responsive adjustments for 4 items per row */
+@media (max-width: 576px) {
+  .skill-box {
+    padding: 10px 5px;
+    margin-bottom: 15px;
+    width: 33.3% !important;
+    flex: 0 0 33.3% !important;
+    max-width: 33.3% !important;
+  }
+  
+  .skill-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .skill-name {
+    font-size: 10px;
+    margin-top: 4px;
+  }
+}
+
+/*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
 .back-to-top {
