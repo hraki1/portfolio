@@ -259,4 +259,66 @@
    */
   new PureCounter();
 
+  /**
+   * Contact form submission using mailto
+   */
+  const contactForm = select('#contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const subject = formData.get('subject');
+      const message = formData.get('message');
+      
+      const loading = select('.loading');
+      const errorMessage = select('.error-message');
+      const sentMessage = select('.sent-message');
+      
+      // Hide previous messages
+      if (loading) loading.style.display = 'none';
+      if (errorMessage) errorMessage.style.display = 'none';
+      if (sentMessage) sentMessage.style.display = 'none';
+      
+      // Show loading
+      if (loading) loading.style.display = 'block';
+      
+      // Validate required fields
+      if (!name || !email || !subject || !message) {
+        if (loading) loading.style.display = 'none';
+        if (errorMessage) {
+          errorMessage.innerHTML = 'Please fill in all required fields.';
+          errorMessage.style.display = 'block';
+        }
+        return;
+      }
+      
+      // Create mailto link
+      const emailBody = `Hello Ahmad,
+
+${message}
+
+Best regards,
+${name}
+Email: ${email}`;
+      
+      const mailtoLink = `mailto:ahmadhraki752@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Show success message
+      setTimeout(() => {
+        if (loading) loading.style.display = 'none';
+        if (sentMessage) {
+          sentMessage.innerHTML = 'Your email client has been opened. Please send the email to complete the process.';
+          sentMessage.style.display = 'block';
+        }
+        contactForm.reset();
+      }, 500);
+    });
+  }
+
 })()
