@@ -368,9 +368,79 @@ h6 {
     line-height: 24px;
     margin-bottom: 30px;
   }
+
+  #hero p {
+    font-size: 18px;
+    line-height: 30px;
+    /* reserve two lines so the button never jumps while the text types out */
+    min-height: 60px;
+    margin-bottom: 30px;
+  }
 }
+
+@media (max-width: 420px) {
+  #hero p {
+    font-size: 22px;
+    line-height: 26px;
+    min-height: 56px;
+  }
+
+  #hero p span {
+    letter-spacing: 0.5px;
+  }
+}
+
+/* Very small phones: shrink the tagline so the longest role never clips */
+@media (max-width: 360px) {
+  #hero p {
+    font-size: 17px;
+    line-height: 24px;
+    min-height: 52px;
+  }
+
+  #hero p span {
+    letter-spacing: 0.3px;
+  }
+}
+
+/* Keep the hero fluid on small screens and reserve space for the typed line
+   so typing character-by-character never overflows or shifts the layout */
+#hero .hero-container {
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+#hero p {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+#hero p .typed,
+#hero p .typed-cursor {
+  white-space: normal;
+}
+
 #hero .cv-container {
-  min-width: 350px;
+  max-width: 100%;
+}
+
+@media (max-width: 1199px) {
+  /* On mobile the flex hero uses align-items:center, which shrink-wraps the
+     content box to the widest line and lets long typed text overflow.
+     Stretch it to full width so the tagline wraps inside the screen. */
+  #hero {
+    align-items: stretch !important;
+  }
+
+  #hero .hero-container {
+    width: 100%;
+    min-width: 0;
+  }
+
+  #hero .cv-container {
+    min-width: 0;
+  }
 }
 #hero .btn {
   background-color: transparent;
